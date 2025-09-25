@@ -1,17 +1,15 @@
 import dotenv from 'dotenv'
 
-// import mongoose from 'mongoose';
-// import {DB_NAME} from "./constants"
-// import express from 'express'
-import connectDB from './db/dbconnect.js';
 
+import connectDB from './db/dbconnect.js';
+import { app } from './app.js';
 dotenv.config({
     path:"./env"
 })
 
 connectDB()
     .then(() => {
-       app.listen(process.env.PORT || 8080,()=>{
+       app.listen(process.env.PORT || 8000,()=>{
         console.log(`server is running at port :${process.env.PORT}`);
         
        })
@@ -21,6 +19,15 @@ connectDB()
     });
 
 
+
+
+
+
+
+    
+// import mongoose from 'mongoose';
+// import {DB_NAME} from "./constants"
+// import express from 'express'
 // const app=express()
 // ;(async()=>{
 //     try{
